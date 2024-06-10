@@ -1,14 +1,7 @@
 #include "A.h"
-#include <stdlib>
+#include <stdlib.h>
 
 // dynamic circular array, also supports queue operations
-struct typedef {
-	double *arr;
-	int sz;
-	int n;
-	int front;
-} A;
-
 void A_init(A* a) {
 	a->arr = malloc(sizeof(double));
 	a->sz = 1;
@@ -26,10 +19,10 @@ void Aset(A* a, int i, double x) {
 
 // push_back
 void Apb(A* a, double x) {
-	if (n == sz) {
+	if (a->n == a->sz) {
 		// double size of underlying array and copy
 		double* newarr = malloc(2*(a->sz)*sizeof(double));
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < a->n; i++) {
 			newarr[i] = Aget(a, i);
 		}
 		free(a->arr);
@@ -37,8 +30,8 @@ void Apb(A* a, double x) {
 		a->sz *= 2;
 		a->front = 0;
 	}
-	Aset(a, n, x);
-	n++;
+	Aset(a, a->n, x);
+	a->n++;
 }
 
 double Afront(A* a) {

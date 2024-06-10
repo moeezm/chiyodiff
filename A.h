@@ -1,4 +1,6 @@
-struct typedef {
+#ifndef A_H
+#define A_H
+typedef struct {
 	double *arr;
 	int sz;
 	int n;
@@ -12,3 +14,5 @@ void Apb(A* a, double x);
 double Afront(A* a);
 double Apopf(A* a);
 void Aclean(A* a);
+
+#endif
