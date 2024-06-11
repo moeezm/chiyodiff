@@ -11,7 +11,7 @@ LDFLAGS = -lm
 TARGET = chiyodiff
 
 # Define the source files
-SRCS = chiyodiff.c tensor.c A.c
+SRCS = chiyodiff.c tensor.c A.c funcs.c
 
 # Define the object files
 OBJS = $(SRCS:.c=.o)

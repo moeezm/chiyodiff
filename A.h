@@ -1,18 +1,21 @@
 #ifndef A_H
 #define A_H
+
+typedef struct Node Node;
+
 typedef struct {
-	double *arr;
+	Node** arr;
 	int sz;
 	int n;
 	int front;
 } A;
 
-void A_init(A* a);
-double Aget(A* a, int i);
-void Aset(A* a, int i, double x);
-void Apb(A* a, double x);
-double Afront(A* a);
-double Apopf(A* a);
-void Aclean(A* a);
+A* Ainit();
+Node* Aget(A* a, int i);
+void Aset(A* a, int i, Node* x);
+void Apb(A* a, Node* x);
+Node* Afront(A* a);
+Node* Apopf(A* a);
+void Afree(A* a);
 
 #endif

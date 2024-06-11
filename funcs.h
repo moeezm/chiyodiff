@@ -10,7 +10,6 @@
 Tensor* matmul(Tensor* ts[]);
 Tensor* matmul_D(Tensor* ts[], int i);
 
-
 // scalar/coordinate wise operations
 double Sadd(double a, double b);
 double Sadd_D(double a, double b);

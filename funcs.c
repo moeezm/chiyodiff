@@ -92,7 +92,7 @@ Tensor* Tadd(Tensor* ts[]) {
 }
 
 Tensor* Tadd_D(Tensor* ts[], int i) {
-    return tensorize_binary(ts[0], ts[1], Sadd_D);
+    return tensorize_binary_D(ts[0], ts[1], Sadd_D);
 }
 
 Tensor* Tsub(Tensor* ts[]) {
@@ -100,8 +100,8 @@ Tensor* Tsub(Tensor* ts[]) {
 }
 
 Tensor* Tsub_D(Tensor* ts[], int i) {
-    if (i == 0) return tensorize_binary(ts[0], ts[1], Ssub_D_A);
-    else return tensorize_binary(ts[0], ts[1], Ssub_D_B);
+    if (i == 0) return tensorize_binary_D(ts[0], ts[1], Ssub_D_A);
+    else return tensorize_binary_D(ts[0], ts[1], Ssub_D_B);
 }
 
 Tensor* Tmul(Tensor* ts[]) {
@@ -109,8 +109,8 @@ Tensor* Tmul(Tensor* ts[]) {
 }
 
 Tensor* Tmul_D(Tensor* ts[], int i) {
-    if (i == 0) return tensorize_binary(ts[0], ts[1], Smul_D_A);
-    else return tensorize_binary(ts[0], ts[1], Smul_D_B);
+    if (i == 0) return tensorize_binary_D(ts[0], ts[1], Smul_D_A);
+    else return tensorize_binary_D(ts[0], ts[1], Smul_D_B);
 }
 
 Tensor* Tdiv(Tensor* ts[]) {
@@ -118,8 +118,8 @@ Tensor* Tdiv(Tensor* ts[]) {
 }
 
 Tensor* Tdiv_D(Tensor* ts[], int i) {
-    if (i == 0) return tensorize_binary(ts[0], ts[1], Sdiv_D_A);
-    else return tensorize_binary(ts[0], ts[1], Sdiv_D_B);
+    if (i == 0) return tensorize_binary_D(ts[0], ts[1], Sdiv_D_A);
+    else return tensorize_binary_D(ts[0], ts[1], Sdiv_D_B);
 }
 
 Tensor* Texp(Tensor* ts[]) {
@@ -127,7 +127,7 @@ Tensor* Texp(Tensor* ts[]) {
 }
 
 Tensor* Texp_D(Tensor* ts[], int i) {
-    return tensorize_unary(ts[0], Sexp_D);
+    return tensorize_unary_D(ts[0], Sexp_D);
 }
 
 Tensor* Tlog(Tensor* ts[]) {
@@ -135,7 +135,7 @@ Tensor* Tlog(Tensor* ts[]) {
 }
 
 Tensor* Tlog_D(Tensor* ts[], int i) {
-    return tensorize_unary(ts[0], Slog_D);
+    return tensorize_unary_D(ts[0], Slog_D);
 }
 
 Tensor* Tsin(Tensor* ts[]) {
@@ -143,7 +143,7 @@ Tensor* Tsin(Tensor* ts[]) {
 }
 
 Tensor* Tsin_D(Tensor* ts[], int i) {
-    return tensorize_unary(ts[0], Ssin_D);
+    return tensorize_unary_D(ts[0], Ssin_D);
 }
 
 Tensor* Tcos(Tensor* ts[]) {
@@ -151,5 +151,5 @@ Tensor* Tcos(Tensor* ts[]) {
 }
 
 Tensor* Tcos_D(Tensor* ts[], int i) {
-    return tensorize_unary(ts[0], Scos_D);
+    return tensorize_unary_D(ts[0], Scos_D);
 }
