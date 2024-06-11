@@ -52,13 +52,6 @@ void Neval(Node* u) {
 	if (u->children->n == 0) return;
 	Tensor** ts = malloc(u->children->n * sizeof(Tensor*));
 	for (int i = 0; i < u->children->n; i++) ts[i] = Aget(u->children, i)->val;
-	printf("PRINTING CHILDREN\n"); 
-	for (int i = 0; i < u->children->n; i++) {
-		Tprint(ts[i]);
-		printf("\n");
-		printf("\n");
-	}
-	printf("\n");
 	u->val = u->f(ts);
 	free(ts);
 }
@@ -134,11 +127,6 @@ void Gbackward(Graph* g, Node* start) {
 			Tensor* D = Neval_D(u, i);
 			Tensor* DD = Tcontract(u->deriv, D, u->val->dimlen);
 			Tfree(D);
-			Tprint(v->deriv);
-			printf("\n");
-			Tprint(DD);
-			printf("\n");
-			printf("\n");
 			Tpadd(v->deriv, DD);
 			Tfree(DD);
 			v->counter--;
