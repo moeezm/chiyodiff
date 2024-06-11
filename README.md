@@ -1,7 +1,7 @@
 # CHIYODIFF
 ![an example computational graph](https://raw.githubusercontent.com/moeezm/chiyodiff/master/chiyograph2.png)
 
-An automatic differentiation library with support for arbitrary tensor operations. If you define a functions from shape X tensors to shape Y tensors, and also define the derivative, then you can use it in chiyodiff.
+An automatic differentiation library with support for arbitrary tensor operations. If you define a function from shape X tensors to shape Y tensors, and also define the derivative, then you can use it in chiyodiff.
 
 Built in support for matmuls, common scalar operations (+,-,\*,/,exp,log,sin,cos) and tensorizing scalar operations.
 
